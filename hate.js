@@ -77,6 +77,32 @@ document.getElementById("Project-link").addEventListener("click", function (even
 });
 
 
+document.getElementById("edu-link").addEventListener("click", function (event) {
+  event.preventDefault(); // Prevent the default anchor behavior
+  document.getElementById("RESUME").scrollIntoView({
+    behavior: "smooth"  // Smooth scroll behavior
+  });
+});
+
+
+document.getElementById("skills-link").addEventListener("click", function(event) {
+  event.preventDefault();
+  document.getElementById("skill").scrollIntoView({
+    behavior: "smooth"
+  });
+});
+
+
+
+document.getElementById("skills-link").addEventListener("click", function(event) {
+  event.preventDefault();
+  document.getElementById("skill").scrollIntoView({
+    behavior: "smooth"
+  });
+});
+
+
+
 
 let i = 0;
 let isDeleting = false;
@@ -181,4 +207,7 @@ document.addEventListener("DOMContentLoaded", function () {
       updateCount();
   });
 });
+
+
+
 
