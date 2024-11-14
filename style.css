@@ -12,6 +12,7 @@ html {
 scroll-behavior: smooth;
 }
 
+
 /* Navbar Styles */
     /* Base styling */
     .navbar {
@@ -46,11 +47,12 @@ scroll-behavior: smooth;
     .navbar ul li:nth-child(4) { --i: 4; }
     .navbar ul li:nth-child(5) { --i: 5; }
     .navbar ul li:nth-child(6) { --i: 6; }
+    .navbar ul li:nth-child(7) { --i: 7; }
 
     .navbar ul li a {
       text-decoration: none;
       color: white;
-      font-size: 20px;
+      font-size: 17px;
       font-weight: bold;
     }
 
@@ -172,6 +174,7 @@ scroll-behavior: smooth;
 .hero-content button {
   padding: 10px 20px;
   font-size: 1.2em;
+  font-weight: bold;
   color: #111;
   background-color: #00ffff;
   border: none;
@@ -180,6 +183,7 @@ scroll-behavior: smooth;
   transition: all 0.3s ease;
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.6), 
               0 0 60px rgba(0, 255, 255, 0.4);
+  transform: translateY(0); /* Initial position */
 }
 
 .hero-content button:hover {
@@ -187,8 +191,8 @@ scroll-behavior: smooth;
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 
               0 0 40px rgba(0, 255, 255, 0.6), 
               0 0 60px rgba(0, 255, 255, 0.4);
+  transform: translateY(-5px); /* Slight upward lift */
 }
-
 
 
 
@@ -229,7 +233,7 @@ scroll-behavior: smooth;
 @media (max-width: 767px) {
   .stats {
 justify-content: center;
-    font-size: small;
+font-size: small;
   }
 }
 
@@ -281,44 +285,156 @@ letter-spacing: 1px;
   line-height: 1.5; 
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  padding-bottom: 100px;
-  flex-wrap: wrap;
+
+
+
+.container{
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+
+}
+.container .main-title{
+	max-width: 700px;
+	margin: 0px auto;
+	text-align: center;
+	font-family: helvetica;
+}
+.container .main-title h1{
+	position: relative;
+	font-size: 40px;
+	color: #ffffff;
+	margin-bottom: 30px;
+	display: inline-block;
+}
+.container .main-title h1::before{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	top: 125%;
+	left: 0;
+	background-color: #808080;
+}
+.container .main-title h1::after{
+	content: '';
+	position: absolute;
+	width: 50%;
+	height: 3px;
+	background-color: aqua;
+	top: calc(125% - 1px);
+	left: 50%;
+	transform: translateX(-50%);
+}
+.main-title p{
+	color: #808080;
+}
+.container .row{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 70px;
+}
+.row .col{
+	flex-basis: 46%;
+}
+.row .sub-title h2{
+	position: relative;
+	color: #ffffff;
+	font-size: 22px;
+	font-family: helvetica;
+	display: inline-block;
+	margin-bottom: 30px;
+}
+.row .sub-title h2::before{
+	content: '';
+	position: absolute;
+	width: 50%;
+	height: 1px;
+	top: 125%;
+	left: 0;
+	background-color: #808080;
+}
+.row .sub-title h2::after{
+	content: '';
+	position: absolute;
+	width: 25%;
+	height: 3px;
+	top: calc(125% - 1px);
+	left: 0;
+	background-color: aqua;
+}
+.subject{
+	font-size: 18px;
+	font-weight: thin;
+	color: #ffffff;
+	padding-bottom: 15px;
+	text-transform: uppercase;
+}
+.progress-bar{
+	position: relative;
+	width: 100%;
+	height: 5px;
+	background-color: #808080;
+	border-radius: 15px;
+	margin-bottom: 20px;
+}
+.progress-bar::after{
+	position: absolute;
+	content: attr(value);
+	top: -35px;
+	right: 0;
+	color: #808080;
+	font-size: 18px;
+}
+.progress-line{
+	position: absolute;
+	width: 0%;
+	height: 7px;
+	background-color: aqua;
+	border-radius: 15px;
+	top: -1px;
+	animation: animate 1.5s cubic-bezier(1, 0.2, 0.2, 1) forwards;
+}
+@keyframes animate{
+	100%{
+		width: 100%;
+	}
+}
+.progress-line::after{
+	content: '';
+	position: absolute;
+	width: 13px;
+	height: 13px;
+	border-radius: 50%;
+	top: 50%;
+	left: 100%;
+	transform: translate(-50%, -50%);
+	background-color: aqua;
 }
 
-.card {
-  width: 180px;
-  height: 240px;
-  background-color: #1a1a1a;
-  border-radius: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  box-sizing: border-box;
-  margin-bottom: 20px;
+@media(max-width: 568px){
+	.container .row{
+		flex-direction: column;
+	}
+	.container .main-title h1{
+		font-size: 36px;
+
+	}
+	.container .row{
+		margin-top: 30px;
+	}
+	.row .col:nth-child(2){
+		margin-top: 20px;
+	}
+	/* Adjust progress-line width for mobile view */
+
+.progress-bar{
+  width: 97%;
 }
 
-.card img {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 20px;
 }
 
-.card .percentage {
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.card .language {
-  font-size: 18px;
-}
 
 .containerbox {
   display: flex;
@@ -555,6 +671,9 @@ to {
   }
 }
 
+.service{
+      height: 20px;
+}
 
 .service-offers {
   display: flex;
@@ -570,10 +689,11 @@ to {
   background-color: #1b1b1b;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  padding: 90px 20px;
+  padding: 35px 20px; /* Adjusted padding to reduce height */
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 .service-card:hover {
   transform: scale(1.05);
@@ -745,3 +865,134 @@ padding-bottom: 45px;
   }
 }
 
+
+
+
+
+/* Education Section Styling */
+.edu-container {
+  margin-left: 15px; /* Reduced margin for smaller screens */
+  padding-bottom: 100px; /* Reduced padding to fit mobile screens */
+  padding-right: 15px; /* Adjust right padding for mobile */
+}
+
+main.row {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column layout on mobile */
+  grid-column-gap: 15px; /* Reduced gap between columns */
+}
+
+.col header.title {
+  font-family: helvetica;
+  color: #ffffff;
+  padding: 0 0 15px 20px; /* Adjusted padding */
+}
+
+.col .contents {
+  padding: 0 20px; /* Reduced padding for mobile */
+  border-left: 2px solid #bababa;
+}
+
+.col .contents .box {
+  position: relative;
+  padding: 15px; /* You can further reduce padding here if needed */
+  width: 80%; /* Reduce width to 80% of its parent container */
+  max-width: 450px; /* Set a max width to limit its expansion */
+  border: 1px solid aqua;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.4s;
+  margin-bottom: 15px; /* Reduced margin for better spacing */
+  animation: slideInRight 0.6s ease-out;
+}
+
+.col .contents .box:hover {
+  box-shadow: 0px 3px 12px 0px aqua;
+  border: 1px solid transparent;
+}
+
+.col .contents .box::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  right: calc(100% + 20px); /* Adjust position of the indicator */
+  top: 0;
+  background-color: aqua;
+  border: 2px solid white;
+}
+
+.box h4 {
+  position: relative;
+  color: white;
+}
+
+.box h3 {
+  font-size: 16px; /* Adjusted font size for mobile */
+  padding: 8px 0 5px;
+  font-family: helvetica;
+  color: white;
+}
+
+.box p {
+  line-height: 1.5; /* Increased line-height for better readability */
+  color: white;
+  font-size: 15px; /* Adjusted font size */
+}
+
+/* Blink animation for the underscore */
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.blink {
+  animation: blink 1s step-start infinite; /* 1s duration, infinite loop */
+}
+
+/* Slide-in animation from the right */
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateY(100%); /* Start from right */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End at original position */
+  }
+}
+
+@media (max-width: 768px) {
+  main.row {
+    grid-template-columns: 1fr; /* Stacking elements in a single column */
+  }
+
+  .row .col:nth-child(2) {
+    margin-top: 20px; /* Adjust top margin */
+  }
+
+  .edu-container {
+    margin-left: 10px; /* Reduced left margin */
+    padding-right: 10px; /* Adjusted right padding */
+  }
+
+  .col .contents .box {
+    padding: 12px; /* Reduced padding */
+  }
+
+  .box h3 {
+    font-size: 17px; /* Slightly smaller font size for readability */
+  }
+
+  .box p {
+    font-size: 14px; /* Slightly smaller font size */
+  }
+}
