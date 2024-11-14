@@ -27,19 +27,24 @@
 
   </head>
 <body>
-   
   <script src="https://kit.fontawesome.com/0594833a1e.js" crossorigin="anonymous"></script>
     <nav class="navbar">
       <span class="menu-toggle" onclick="toggleMenu()">☰</span>
         <ul>
             <li><a href="index.html">HOME</a></li>
             <li><a href="#about" id="about-link">ABOUT</a></li>
-            <li><a href="#skills">SKILLS</a></li>
+            <li><a href="#edu" id="edu-link">RESUME</a></li>
+            <li><a href="#skills" id="skills-link">SKILLS</a></li>
             <li><a href="#service" id="service-link">SERVICE</a></li>
             <li><a href="#Project" id="Project-link">PROJECT</a></li>
             <li><a href="#contact" id="contact-link">CONTACT</a></li>
         </ul>
     </nav>
+
+
+
+
+    
     <main>
       <section class="hero">
           <div class="hero-content">
@@ -73,9 +78,10 @@
           <p>Happy Clients</p>
       </div>
     </section>
-    
+   
   </main>
-  
+
+
       <section id="about">
         
       <div class="about-me-container">
@@ -99,42 +105,142 @@
       </section>
 
 
-      <section id="skill">
-
- 
-    <section id="skills" class="container">
-    <div class="container">
-        <div class="card">
-          <img src="img/html.png" alt="HTML">
-          <div class="percentage">90%</div>
-          <div class="language">HTML</div>
+  
+      <section id="edu">
+        <div class="edu-container">
+          <main class="row">
+            <!--   *******  Education Section Starts  *******   -->
+            <section class="col">
+              <header class="title">
+                <h2>RESUME<span class="blink">_</span></h2> <!-- Apply class to underscore -->
+                <h4><span style="color: aqua;">EDUCATION</span></h4>
+              </header>
+      
+              <div class="contents">
+                <div class="box">
+                  <h4>2013 - <span style="color: aqua;">2025</span></h4>
+                  <h3>Lalith Athulath mudali Collage</h3>
+                  <p>G.C.E (O/L)  In Art Stream</p>
+                </div>
+      
+                <div class="box">
+                  <h4>2021 - <span style="color: aqua;">2023</span></h4>
+                  <h3>Udemy</h3>
+                  <p>Web Front-End Development ( Html , Css , Javascript )</p>
+                </div>
+      
+                <div class="box">
+                  <h4>2023 - <span style="color: aqua;">2024</span></h4>
+                  <h3>Udemy</h3>
+                  <p>Graphic Desing ( Adobe Photoshop , Adobe illustrator)</p>
+                </div>
+              </div>
+            </section>
+          </main>
         </div>
-        <div class="card">
-          <img src="img/css.png" alt="CSS">
-          <div class="percentage">80%</div>
-          <div class="language">CSS</div>
-        </div>
-        <div class="card">
-          <img src="img/js.png" alt="JavaScript">
-          <div class="percentage">45%</div>
-          <div class="language">JAVASCRIPT</div>
-        </div>
-        <div class="card">
-            <img src="img/ps.png" alt="HTML">
-            <div class="percentage">78%</div>
-            <div class="language">PHOTOSHOP</div>
-          </div>
-          <div class="card">
-            <img src="img/boost.png" alt="HTML">
-            <div class="percentage">76%</div>
-            <div class="language">BOOSTRAP</div>
-          </div>
-      </div> 
-    </section>
-
       </section>
+      
 
-
+      <div class="container">
+	
+        <!--   *******  Main Heading Starts  *******   -->
+      
+        <div class="main-title">
+          <h1>My <span style="color: aqua;">Skills</span></h1>
+        </div>
+      
+        <!--   *******  Main Heading Ends  *******   -->
+      
+        <div class="row">
+          
+          <!--   *******  Left Section Starts here  *******   -->
+      
+          <section class="col">
+            
+            <div class="sub-title">
+              <h2>Programming Skills</h2>
+            </div>
+      
+            <div class="skills-container">
+              
+              <div class="skill">
+                <div class="subject">HTML</div>
+                <div class="progress-bar" value="86%">
+                  <div class="progress-line" style="max-width: 86%"></div>
+                </div>
+              </div>
+      
+              <div class="skill">
+                <div class="subject">CSS</div>
+                <div class="progress-bar" value="74%">
+                  <div class="progress-line" style="max-width: 74%"></div>
+                </div>
+              </div>
+      
+                      <div class="skill">
+                <div class="subject">JavaScript</div>
+                <div class="progress-bar" value="51%">
+                  <div class="progress-line" style="max-width: 51%"></div>
+                </div>
+              </div>
+      
+              <div class="skill">
+                <div class="subject">Php</div>
+                <div class="progress-bar" value="36%">
+                  <div class="progress-line" style="max-width: 36%"></div>
+                </div>
+              </div>
+      
+            </div>
+          </section>
+      
+          <!--   ********  Left Section Ends Here  *******  -->
+      
+          <!--   ********  Right Section Starts Here  ********  -->
+      
+          <section class="col">
+            
+            <div class="sub-title">
+              <h2>Designing Skills</h2>
+            </div>
+      
+            <div class="skills-container">
+              
+              <div class="skill">
+                <div class="subject">Photoshop</div>
+                <div class="progress-bar" value="82%">
+                  <div class="progress-line" style="max-width: 82%"></div>
+                </div>
+              </div>
+      
+              <div class="skill">
+                <div class="subject">Illustrator</div>
+                <div class="progress-bar" value="57%">
+                  <div class="progress-line" style="max-width: 57%"></div>
+                </div>
+              </div>
+      
+                      <div class="skill">
+                <div class="subject">Figma</div>
+                <div class="progress-bar" value="31%">
+                  <div class="progress-line" style="max-width: 31%"></div>
+                </div>
+              </div>
+      
+              <div class="skill">
+                <div class="subject">Responsive Design</div>
+                <div class="progress-bar" value="90%">
+                  <div class="progress-line" style="max-width: 90%"></div>
+                </div>
+              </div>
+      
+            </div>
+          </section>
+      
+          <!--   ********  Right Section Ends Here  ********   -->
+        </div>
+      
+      </div>
 
       
       <section id="service">
