@@ -692,7 +692,9 @@ to {
 
   .submit-btn {
       padding: 10px;
-    
+     text-align: center;
+     justify-content: center;
+     justify-items: center;
   }
 }
 
