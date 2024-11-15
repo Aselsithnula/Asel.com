@@ -143,26 +143,34 @@ document.addEventListener("DOMContentLoaded", typeWriter);
 
 
 
-
-
-
-
-
-
 function Sendmail(event) {
   event.preventDefault(); // Prevents the default form submission
 
+  // Get form values
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var subject = document.getElementById("subject").value;
+  var message = document.getElementById("message").value;
+
+  // Validate required fields
+  if (name === "" || email === "") {
+    alert("Please fill your name and email.");
+    return;
+  }
+
   var params = {
-    name: document.getElementById("name").value,
-    email: document.getElementById("email").value,
-    subject: document.getElementById("subject").value,
-    message: document.getElementById("message").value
+    name: name,
+    email: email,
+    subject: subject,
+    message: message
   };
 
+  // Send email using EmailJS
   emailjs.send("service_le66ibm", "template_4bwmwal", params)
     .then((res) => {
       console.log(res);
-      
+      alert("Message sent successfully!");
+
       // Show the success popup with GIF
       var popup = document.getElementById("popup");
       popup.style.display = "block";
@@ -170,9 +178,12 @@ function Sendmail(event) {
       // Auto-remove the popup after 3 seconds
       setTimeout(() => {
         popup.style.display = "none";
-      }, 5000);
+      }, 3000); // Adjusted timeout to 3 seconds
     })
-    .catch((err) => console.log(err));
+    .catch((error) => {
+      console.error(error);
+      alert("There was an error sending your message. Please try again later.");
+    });
 }
 
 //navtionbar//
@@ -206,6 +217,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
       updateCount();
   });
+});
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const heroImage = document.querySelector(".hero-image img");
+
+  // Check if the page has already been refreshed
+  if (!localStorage.getItem("animationRefreshed")) {
+    heroImage.addEventListener("animationend", () => {
+      // Set the flag in localStorage
+      localStorage.setItem("animationRefreshed", "true");
+      // Refresh the page
+      location.reload();
+    });
+  }
 });
 
 
